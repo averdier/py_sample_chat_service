@@ -11,7 +11,9 @@ api = Api(blueprint,
           )
 
 from .endpoints.postman import ns as postman_namespace
+from .endpoints.auth import ns as auth_namespace
 from .endpoints.messages import ns as messages_namespace
 
 api.add_namespace(postman_namespace)
+api.add_namespace(auth_namespace)
 api.add_namespace(messages_namespace)

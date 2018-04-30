@@ -13,12 +13,16 @@ def create_app(config_name='default'):
     """
 
     from .api import blueprint as api_blueprint
+    from .basic import blueprint as basic_blueprint
+    from .bearer import blueprint as bearer_blueprint
 
     app = Flask(__name__)
 
     app.config.from_object(config[config_name])
 
     app.register_blueprint(api_blueprint)
+    app.register_blueprint(basic_blueprint)
+    app.register_blueprint(bearer_blueprint)
 
     extensions(app)
 
